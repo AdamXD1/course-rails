@@ -1,0 +1,33 @@
+<div id="<% section.id %>" class="flex border-2 p-5 my-5 rounded-lg shadow-lg items-center">
+   
+   <div class="flex flex-col justify-center items-center mr-5 gap-2">
+      <% if SurveySection.grab_record(survey.id, section.id).order != 1 %>
+         <%= button_to survey_up_section_path(survey, id: section.id), method: :patch do %>
+            <i class="fas fa-arrow-circle-up"></i>
+         <% end %>
+      <% end %>
+
+      <% if SurveySection.grab_record(survey.id, section.id).order != SurveySection.set_maximum(survey.id) %>
+         <%= button_to survey_down_section_path(survey, id: section.id), method: :patch do %>
+            <i class="fas fa-arrow-circle-down"></i>
+         <% end %>
+      <% end %>
+   </div>
+   <div class="w-8/12 flex flex-col mr-5">
+     <span class="font-semibold">
+        <%= section.name %>
+     </span>
+
+     <span class="text-sm">
+        <%= section.description%>
+     </span>
+   </div>
+   <div class="w-3/12 mr-5">
+        <span class="font-semibold"> <%= time_ago_in_words(section.created_at) %></span>
+   </div>
+   <div class="w-1/12 flex justify-end mr-5">
+          <%= button_to survey_delete_section_path(survey, id: section.id), id:"remove_section_icon", method: :delete, form: {data: {turbo_confirm: "Are you sure?"} } do %>
+               <i class="fa-solid fa-trash text-removeIcon"></i>
+          <% end %>
+   </div>
+</div>

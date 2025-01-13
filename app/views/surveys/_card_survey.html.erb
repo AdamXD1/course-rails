@@ -1,0 +1,51 @@
+<%= turbo_frame_tag 'modal' %>
+<section id="<%= dom_id survey %>" class="border-2 w-9/12 mx-auto flex h-48 rounded-lg shadow-lg p-2 my-20">
+
+  <div class="w-48">
+    <% if survey.avatar.attached?%>
+      <%= image_tag(survey.avatar, class: "object-fit h-full w-full")%>
+    <% else %>
+      <%= image_tag("Upload.png", class: "object-fit h-full w-full")%>
+    <% end %>
+  </div>
+  
+  <div class="w-full p-5">
+    <p class="text-3xl font-bold text-surveyStrong">
+      <%= survey.name %>
+      <i class="fa-solid fa-list-check ml-5"></i>
+    </p>
+
+    <p class="my-2 font-semibold text-surveyStrong">
+      <%= survey.description %>
+      
+    </p>
+
+    <p class="font-semibold text-sm text-surveyStrong">
+      <%= survey.user.email %>
+    </p>
+  </div>
+  
+  <div class="flex flex-col justify-between p-2">
+    <%= link_to edit_survey_path(survey), id:"edit_chapter_icon", data: {turbo_frame: 'modal'} do %>
+      <i class="fa-solid fa-pen text-editIcon"></i>
+    <% end %>
+
+    <%= button_to survey_path(survey), id:"remove_chapter_icon", method: :delete, form: {data: {turbo_confirm: "Are you sure?"} } do %>
+      <i class="fa-solid fa-trash text-removeIcon"></i>
+    <% end %>
+
+    <%= link_to survey_add_emails_path(survey), id:"send_survey", data: {turbo_frame: 'modal'} do %>
+      <i class="fas fa-share"></i>
+    <% end %>
+
+    <%= button_to export_answers_path(format: "csv"), method: :get, params: { id: survey.id } ,id: "export answers" do %>
+      <i class="fas fa-cloud-download"></i>
+    <% end %>
+
+    <%= button_to exportxlsx_anwers_path(format: "xlsx"), method: :get, params: {id: survey.id }, id: "export answers" do %>
+      <i class="fa-sharp fa-solid fa-arrow-down-to-line"></i>
+    <% end %>
+
+  </div>
+</section>
+

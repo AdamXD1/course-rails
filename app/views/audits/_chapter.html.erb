@@ -1,0 +1,42 @@
+<section class="bg-mainColor p-10">
+    <div class="bg-white px-32 pb-32 pt-16 rounded-lg flex-col justify-center">
+        <div class="mb-14 flex justify-between">
+            <%= link_to audits_index_path(step: step - 1) do %>
+                <span class="text-white font-semibold bg-removeIcon py-2 px-5 rounded-lg text-sm">
+                    back
+                </span>
+            <% end %>
+            <% if @total != @step %>
+                <%= link_to audits_index_path(step: step + 1) do %>
+                    <span class="text-white font-semibold bg-evaluationStrong py-2 px-5 rounded-lg text-sm">
+                        next
+                    </span>
+                <% end %>
+            <% else %>
+                <%= button_to audits_finish_path, method: :get, params: {id: survey.id, token_id: token } do %>
+                    <span class="text-white font-semibold bg-evaluationStrong py-2 px-5 rounded-lg text-sm">
+                        Finish survey
+                    </span>
+                <% end %>
+            <% end %>
+
+        </div>
+
+        <div class="mb-16 w-full bg-gray-200 rounded-full h-2.5 dark:bg-gray-700"> 
+            <div class="bg-blue-600 h-2.5 rounded-full" style="width: <%= "#{bar.to_i}%" %>"></div>
+        </div>
+
+        <div class="flex flex-col justify-center">
+            <h2 class="text-mainColor font-bold text-5xl mt-1 mb-0 text-center"> <%= chapter.name %> </h2>
+            <p class="flex justify-center mt-1 mb-5">
+                <span class="text-mainColor font-bold text-2xl">
+                    <%= chapter.description %>
+                </span>
+            </p>
+
+            <div class="text-mainColor text-center my-10">
+                <%= chapter.body %>
+            </div>
+        </div>
+    </div>
+</section>

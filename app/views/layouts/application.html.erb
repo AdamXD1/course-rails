@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>CourseRails</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <%= stylesheet_link_tag "tailwind", "inter-font", "data-turbo-track": "reload" %>
+
+    <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+    <%= javascript_importmap_tags %>
+  </head>
+
+  <body>
+    <%= render 'shared/main_navbar' %>
+      <!--
+      <p class="notice"><%= notice %></p>
+      <p class="alert"><%= alert %></p>
+      -->
+    <main class="flex justify-between">
+
+      <div class="w-full">
+        <%= yield %>
+      </div>
+
+      <% if current_user %>
+        <nav class="bg-footerGray p-2">
+          <%=  render 'shared/right_navbar' %>
+        </nav>
+      <% end %>
+    </main>
+
+    <%= render 'shared/footer'%>
+  </body>
+</html>

@@ -1,0 +1,22 @@
+<%= turbo_frame_tag "option_#{option.id}" do %>
+<div class="border-2 rounded-lg flex justify-between p-3 m-2">
+    <div>
+        <p>
+            <span class="text-sm">
+                <%= option.name%>
+            </span>
+        </p>
+    </div>
+
+    <div class="flex gap-5">
+        <%= link_to question_option_edit_path(option.question, id: option.id) do %>
+            <i class="fa-solid fa-pen text-editIcon"></i>
+        <% end %>
+
+        <%= button_to question_option_destroy_path(option.question, id: option.id), method: :delete, form: {data: {turbo_confirm: "Are you sure?"}} do %>
+            <i class="fa-solid fa-trash removeIcon"></i>
+        <% end %>
+    </div>
+</div>
+
+<% end %>

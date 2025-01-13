@@ -1,0 +1,128 @@
+<main>
+  <section class="h-96 flex justify-around items-center gap-10 bg-mainColor">
+    <div class="text-white text-center">
+      <p class="font-semibold text-3xl py-5">
+        Aplicación de Encuestas Rails
+      </p>
+      <p>
+        Crea tu primera encuesta
+      </p>
+      <p>
+        Empieza a enviar encuestas a diferentes empresas alrededor del mundo.
+      </p>
+      <div class="py-5 text-black">
+        <%= button_to root_path, id: "get_started" do %>
+          <div class="bg-signIn p-4 rounded-lg">
+            <i class="fa-solid fa-circle-arrow-right"></i> 
+            <span class="ml-5">
+              empezar
+            </span>
+          </div>
+        <% end %>
+      </div>
+      <p class="text-sm font-semibold">
+        survey-rails-app.com
+      </p>
+    </div>
+    <div>
+      <%= image_tag("ruby.png", width: "300") %>
+    </div>
+  </section>
+
+  <section>
+    <div class="flex justify-around p-10">
+      <%= image_tag("Amazon.png", width:"150") %>
+      <%= image_tag("Facebook.png", width:"150") %>
+      <%= image_tag("Google.png", width:"150") %>
+      <%= image_tag("Instagram.png", width:"150") %>
+      <%= image_tag("LinkedIn.png", width:"150") %>
+      <%= image_tag("Spotify.png", width:"150") %>
+      <%= image_tag("Twitter.png", width:"150") %>
+    </div>
+
+    <p class="text-center text-sm font-semibold text-mainColor p-10">
+      Nuestra plataforma ha sido diseñada para integrarse con las principales empresas tecnológicas del mercado, ofreciendo soluciones eficaces y adaptadas a tus necesidades. Descubre cómo podemos ayudarte a recolectar información valiosa.
+    </p>
+  </section>
+
+  <div class="text-center text-sm font-semibold border-2">
+    ---
+  </div>
+
+  <section class="h-96 flex justify-around items-center">
+    <div>
+      <%= image_tag("2126918.jpg", width:"350") %>
+    </div>
+    <div>
+      <h2 class="font-semibold text-center text-mainColor text-2xl pb-5">¡Trabajando con tu equipo!</h2>
+      <p class="text-sm text-center text-mainColor font-semibold">
+        Nuestra herramienta facilita la colaboración entre miembros de tu organización, permitiéndoles diseñar, compartir y analizar encuestas en un entorno seguro y accesible. <br>
+        Trabaja en conjunto y mejora la calidad de los datos recolectados.
+      </p>
+    </div>
+  </section>
+
+  <div class="text-center text-sm font-semibold border-2">
+    ---
+  </div>
+
+  <section class="h-96 flex justify-around items-center">
+    
+    <div>
+      <h2 class="font-semibold text-center text-mainColor text-2xl pb-5">Responde la encuesta</h2>
+      <p class="text-sm text-center text-mainColor font-semibold">
+        Tu participación es clave para el éxito del proceso de encuestas. <br>
+        Responde con honestidad y detalla tus experiencias para que podamos ofrecer soluciones personalizadas y mejorar continuamente.
+      </p>
+    </div>
+
+    <div>
+      <%= image_tag("4048544.jpg", width:"350") %>
+    </div>
+
+  </section>
+
+  <div class="text-center text-sm font-semibold border-2">
+    ---
+  </div>
+
+  <section class="h-96 flex flex-col justify-around items-center m-32">
+    
+    <div>
+      <h2 class="font-semibold text-center text-mainColor text-2xl pb-5">Participa en la encuesta</h2>
+    </div>
+
+    <div class="flex py-10 w-3/6 justify-between">
+      <%= image_tag("2978479.jpg", width:"250") %>
+      <%= image_tag("check_box_image.png", width:"250") %>
+    </div>
+
+    <div>
+      <p class="text-sm text-center text-mainColor font-semibold">
+        Nuestra plataforma asegura que cada respuesta sea sencilla de proporcionar y garantiza la confidencialidad de tus datos. <br>
+        Comparte tus opiniones de forma segura y efectiva.
+      </p>
+    </div>
+  </section>
+
+  <div class="text-center text-sm font-semibold border-2">
+    ---
+  </div>
+
+  <section class="flex flex-col justify center m-32 h-96 items-center">
+    
+    <div>
+      <h2 class="font-semibold text-center text-mainColor text-2xl pb-5">¡Facilita las cosas!</h2>
+    </div>
+
+    <div class="flex py-10">
+      <%= image_tag("posting_image.png") %>
+    </div>
+
+    <div>
+      <p class="text-sm text-center text-mainColor font-semibold">
+        Simplifica el proceso de creación y gestión de encuestas, permitiéndote centrarte en lo que realmente importa: recopilar información valiosa y mejorar tus estrategias de negocio.
+      </p>
+    </div>
+  </section>
+</main>

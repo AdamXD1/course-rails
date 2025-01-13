@@ -1,0 +1,31 @@
+<%= form_with(model: @survey, id: "form_survey", data: { controller: "reset", action: "submit -> reset#resetform"}) do |form| %>
+
+  <div>
+    <%= render 'shared/errors', objt: @survey %>
+  </div>
+
+  <div class="flex flex-col my-3">
+    <%= form.label :name, class: "text-white font-bold w-2/12" %>
+    <%= form.text_field :name, class:"p-2 rounded-lg text-sm font-semibold w-full" %>
+  </div>
+
+  <div class="flex flex-col my-3">
+    <%= form.label :description, class: "text-white font-bold w-2/12" %>
+    <%= form.text_field :description, class:"p-2 rounded-lg text-sm font-semibold w-full" %>
+  </div>
+
+  <div class="flex items-center my-2">
+    <%= form.label :avatar, class: "text-white font-bold w-2/12" %>
+    <%= form.file_field :avatar, class:"text-sm rounded-lg font-semibold" %>
+  </div>
+
+  <div class="flex py-2 justify-end gap-5">
+    <span class="bg-evaluationStrong p-2 rounder-lg">
+      <%= form.submit  class:"text-white font-semibold" %>
+    </span>
+
+    <span class="bg-removeIcon p-2 rounded-lg">
+      <%= link_to 'Cancel', :back, class:"text-white font-semibold" %>
+    </span>
+  </div>
+<% end %>

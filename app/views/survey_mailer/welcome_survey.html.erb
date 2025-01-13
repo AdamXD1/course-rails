@@ -1,0 +1,21 @@
+<html>
+    <head>
+        <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+    </head>
+    <body>
+        <h1> <%= @survey.name %></h1>
+        <hr>
+        <p>
+            Hello, <strong> <%= @log.email %> </strong> <br>
+            You've been invited to answer this survey.
+        </p>
+
+        <p>
+            <%= @message %>
+        </p>
+
+        <p>
+            Please, click on the next link: <%= @url %>
+        </p>
+    </body>
+</html>

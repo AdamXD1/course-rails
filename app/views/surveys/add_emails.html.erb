@@ -1,0 +1,36 @@
+<%= render 'shared/modal', title: "Send survey" do %>
+  <%= form_with(url: survey_send_survey_path(@survey), id: "send_survey_form", method: :post, 
+    class: "flex flex-col", data: { controller: "reset", action: "submit -> reset#resetform" }) do |f| %>
+    
+    <div class="flex items-center gap-5 mt-5 mb-0">
+        <%= f.label :email, "Send to:", class: "text-white font-bold w-2/12" %>
+        <%= f.text_field :email, class:"p-2 rounded-lg text-sm font-semibold w-full" %>
+    </div>
+
+    <div class="mt-1 mb-5">
+        <span class="text-sm font-semibold text-white">In order to add an email, follow this example: usaer@email.com</span>
+    </div>
+
+
+    <div class="flex items-center gap-5 my-2">
+        <%= f.label :subject, "Subject:", class: "text-white font-bold w-2/12" %>
+        <%= f.text_field :subject, class:"p-2 rounded-lg text-sm font-semibold w-full" %>
+    </div>
+
+    <div class="flex flex-col gap-5 my-2">
+        <%= f.label :message, "Message:", class: "text-white font-bold w-2/12" %>
+        <%= f.text_area :message, class:"p-2 rounded-lg text-sm font-semibold w-full h-48" %>
+    </div>
+
+    <div class="flex py-2 justify-end gap-5 my-5">
+        <span class="bg-evaluationStrong p-2 rounder-lg">
+        <%= f.submit "Send survey", class:"text-white font-semibold" %>
+        </span>
+
+        <span class="bg-removeIcon p-2 rounded-lg">
+        <%= link_to 'Cancel', :back, class:"text-white font-semibold" %>
+        </span>
+  </div>
+
+  <% end %>
+<% end %>

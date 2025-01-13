@@ -1,0 +1,34 @@
+<section class="flex justify-around h-screen items-center">
+  <div>
+    <h1 class="text-center font-semibold text-3xl">Aplicación de Encuestas Rails</h1>
+    <p class="text-center text-sm text-mainColor font-semibold">survey-rails-app.com</p>
+    <p class="py-5 text-sm font-semibold text-mainColor text-center">
+      Nuestra plataforma te ofrece herramientas intuitivas para diseñar y administrar encuestas. <br>
+      Elige entre diferentes opciones para personalizar cada evaluación, <br>
+      y trabaja en equipo para obtener los mejores resultados.
+    </p>
+
+    <div class="flex w-full justify-around">
+      <div class="bg-evaluationStrong p-3 text-white font-semibold text-sm rounded-lg">
+        <%= button_to evaluations_path, method: :get, id: "create_evaluation_index" do %>
+          Crear evaluación
+        <% end %>
+      </div>
+      <div class="bg-surveyStrong p-3 text-white font-semibold text-sm rounded-lg">
+        <%= button_to surveys_path, method: :get, id: "create_evaluation_index" do %>
+          Crear encuesta
+        <% end %>
+      </div>
+      <div class="bg-chapterStrong p-3 text-white font-semibold text-sm rounded-lg">
+        <%= button_to chapters_path, method: :get, id: "create_evaluation_index" do %>
+          Crear capítulo
+        <% end %>
+      </div>
+    </div>
+  </div>
+
+  <div class="flex flex-col justify-center">
+    <span class="text-center text-lg font-semibold text-mainColor">¡Estás dentro!</span>
+    <%= image_tag("3254897.jpg", width:"400") %>
+  </div>
+</section>

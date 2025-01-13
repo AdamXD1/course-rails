@@ -1,0 +1,13 @@
+<% if objt.errors.any? %>
+    <div id="error_explanation" class="bg-errorMessage p-5 rounded-lg my-3 overflow-y-auto h-32">
+        <div class="alertcalert-danger text-removeIcon font-semibold text-lg">
+            The form contains <%= pluralize(objt.errors.count, "error") %>
+        </div>
+
+        <ul>
+            <% objt.errors.full_messages.each do |msg| %>
+                <li class="text-removeIcon font-semibold text-sm"> - <%= msg %> </li>
+            <% end %>
+        </ul>
+    </div>
+<% end %>

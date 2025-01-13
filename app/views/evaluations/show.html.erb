@@ -1,0 +1,8 @@
+<%= turbo_frame_tag 'modal' %>
+<%= render "card_evaluation", evaluation: @evaluation %>
+
+
+<section class="flex m-10">
+  <%= render 'questions/form' %>
+  <%= render 'questions/questions', evaluation: @evaluation %>
+</section>
