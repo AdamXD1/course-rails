@@ -5,13 +5,10 @@
     </div>
 
     <div>
-        <h1 class="text-center text-3xl font-bold text-evaluationStrong">Evaluations</h1>
+        <h1 class="text-center text-3xl font-bold text-evaluationStrong">Evaluaciones</h1>
         <p class="text-center py-2 font-semibold text-evaluationStrong">
-            Lorem ipsum dolor sit amet consectetur adipisicing <br> 
-            elit. Architecto similique, voluptates harum <br>
-            pariatur iusto asperiores quidem libero unde <br>
-            assumenda dolorum earum esse facere ullam, ipsa qui <br>
-            dolore suscipit illo cum.
+        En esta sección, encontrarás todas las evaluaciones disponibles. <br>
+        También podrás crear nuevas, las evaluaciones se podrán añadir a una encuesta.
             
         </p>
 
@@ -19,7 +16,7 @@
             <!--los turbo frames son utilizados para reemplazar bloques dentro de la aplicacion-->
             <%= link_to new_evaluation_path, id:"create_evaluation_welcome", data: {turbo_frame: 'modal'} do %>
                 <div class="p-3 bg-evaluationStrong text-white font-semibold text-sm rounded-lg">
-                    Create evaluation
+                    Crear evaluación
                 </div>
             <% end %>
         </div>
